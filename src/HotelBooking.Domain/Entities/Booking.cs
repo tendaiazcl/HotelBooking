@@ -60,4 +60,11 @@ public class Booking
 
         Status = BookingStatus.Cancelled;
     }
+    public bool Overlaps(
+    DateTime requestedCheckIn,
+    DateTime requestedCheckOut)
+    {
+        return CheckIn < requestedCheckOut &&
+               CheckOut > requestedCheckIn;
+    }
 }

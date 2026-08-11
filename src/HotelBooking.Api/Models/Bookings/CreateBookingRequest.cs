@@ -1,6 +1,6 @@
-namespace HotelBooking.Application.UseCases.Bookings.CreateBooking;
+namespace HotelBooking.Api.Contracts.Bookings;
 
-public class CreateBookingCommand
+public class CreateBookingRequest
 {
     public int CustomerId { get; init; }
 

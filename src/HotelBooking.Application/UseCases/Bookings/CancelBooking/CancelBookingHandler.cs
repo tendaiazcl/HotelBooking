@@ -2,14 +2,18 @@ using HotelBooking.Application.Interfaces;
 
 namespace HotelBooking.Application.UseCases.Bookings.CancelBooking;
 
+
 public class CancelBookingHandler
 {
     private readonly IBookingRepository _bookingRepository;
+    private readonly IUnitOfWork _unitOfWork;
 
     public CancelBookingHandler(
-        IBookingRepository bookingRepository)
+        IBookingRepository bookingRepository,
+        IUnitOfWork unitOfWork)
     {
         _bookingRepository = bookingRepository;
+        _unitOfWork = unitOfWork;
     }
 
     public async Task Handle(CancelBookingCommand command)
@@ -22,5 +26,7 @@ public class CancelBookingHandler
                 "Booking not found.");
 
         booking.Cancel();
+
+        await _unitOfWork.SaveChangesAsync();
     }
 }

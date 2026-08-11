@@ -1,13 +1,12 @@
-using HotelBooking.Domain.Entities;
-
 namespace HotelBooking.Application.Interfaces;
 
-public interface IBookingRepository
+public interface IUnitOfWork
 {
-    Task AddAsync(Booking booking);
+    Task SaveChangesAsync();
 
-    Task<bool> HasOverlappingBookingAsync(
-        int roomId,
-        DateTime checkIn,
-        DateTime checkOut);
+    Task BeginTransactionAsync();
+
+    Task CommitTransactionAsync();
+
+    Task RollbackTransactionAsync();
 }

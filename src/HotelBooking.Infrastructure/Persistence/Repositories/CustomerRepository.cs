@@ -1,34 +1,29 @@
 using HotelBooking.Application.Interfaces;
 using HotelBooking.Domain.Entities;
+using HotelBooking.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 namespace HotelBooking.Infrastructure.Persistence.Repositories;
 
-public class BookingRepository : IBookingRepository
+public class CustomerRepository : ICustomerRepository
 {
     private readonly HotelBookingDbContext _context;
 
-    public BookingRepository(HotelBookingDbContext context)
+    public CustomerRepository(HotelBookingDbContext context)
     {
         _context = context;
     }
 
-    public async Task AddAsync(Booking booking)
+    public async Task AddAsync(Customer customer)
     {
-        await _context.Bookings.AddAsync(booking);
+        await _context.Customers.AddAsync(customer);
 
         await _context.SaveChangesAsync();
     }
 
-    public async Task<bool> HasOverlappingBookingAsync(
-        int roomId,
-        DateTime checkIn,
-        DateTime checkOut)
+    public async Task<Customer?> GetByIdAsync(int id)
     {
-        return await _context.Bookings.AnyAsync(b =>
-            b.RoomId == roomId &&
-            b.Status == BookingStatus.Confirmed &&
-            b.CheckIn < checkOut &&
-            b.CheckOut > checkIn);
+        return await _context.Customers
+            .FirstOrDefaultAsync(c => c.Id == id);
     }
 }

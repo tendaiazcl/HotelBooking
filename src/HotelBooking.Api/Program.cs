@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using HotelBooking.Application.UseCases.Hotels.CreateHotel;
 using HotelBooking.Application.UseCases.Hotels.GetHotels;
 using HotelBooking.Application.UseCases.RoomTypes.CreateRoomType;
+using HotelBooking.Application.UseCases.Bookings.CreateBooking;
+using HotelBooking.Api.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,11 @@ builder.Services.AddScoped<IRoomTypeRepository, RoomTypeRepository>();
 builder.Services.AddScoped<CreateRoomTypeHandler>();
 builder.Services.AddScoped<IRoomRepository, RoomRepository>();
 builder.Services.AddControllers();
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<IBookingRepository, BookingRepository>();
+builder.Services.AddScoped<CreateBookingHandler>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddProblemDetails();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
@@ -27,6 +34,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();   // Serves the JSON endpoint
     app.UseSwaggerUI(); // Serves the HTML UI web page
 }
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.MapControllers();
+
 
 app.Run();

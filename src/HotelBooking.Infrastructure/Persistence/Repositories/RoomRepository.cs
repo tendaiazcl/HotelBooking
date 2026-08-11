@@ -27,4 +27,24 @@ public class RoomRepository : IRoomRepository
             .Where(r => r.HotelId == hotelId)
             .ToListAsync();
     }
+    public async Task<Room?> GetByIdAsync(int id)
+    {
+        return await _context.Rooms
+            .Include(r => r.RoomType)
+            .FirstOrDefaultAsync(r => r.Id == id);
+    }
+    public async Task<List<Room>> SearchAvailableAsync(
+    int hotelId,
+    DateTime checkIn,
+    DateTime checkOut)
+    {
+        return await _context.Rooms
+            .Include(r => r.RoomType)
+            .Where(r => r.HotelId == hotelId)
+            .Where(r => !r.Bookings.Any(b =>
+                b.Status == BookingStatus.Confirmed &&
+                b.CheckIn < checkOut &&
+                b.CheckOut > checkIn))
+            .ToListAsync();
+    }
 }

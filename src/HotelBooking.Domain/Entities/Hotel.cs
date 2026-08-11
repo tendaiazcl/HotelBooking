@@ -20,25 +20,25 @@ public class Hotel
     {
     }
 
-   public Hotel(
-    string name,
-    string description,
-    string address,
-    string city,
-    string country,
-    int starRating)
-{
-    if (string.IsNullOrWhiteSpace(name))
-        throw new ArgumentException("Hotel name is required.");
+    public Hotel(
+     string name,
+     string description,
+     string address,
+     string city,
+     string country,
+     int starRating)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+            throw new ArgumentException("Hotel name is required.");
 
-    if (starRating < 1 || starRating > 5)
-        throw new ArgumentException("Star rating must be between 1 and 5.");
+        if (starRating < 1 || starRating > 5)
+            throw new ArgumentException("Star rating must be between 1 and 5.");
 
-    Name = name;
-    Description = description;
-    Address = address;
-    City = city;
-    Country = country;
-    StarRating = starRating;
-}
+        Name = name;
+        Description = description;
+        Address = address;
+        City = city;
+        Country = country;
+        StarRating = starRating;
+    }
 }

@@ -6,6 +6,8 @@ public interface IBookingRepository
 {
     Task AddAsync(Booking booking);
 
+    Task<Booking?> GetByIdAsync(int id);
+
     Task<bool> HasOverlappingBookingAsync(
         int roomId,
         DateTime checkIn,

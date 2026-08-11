@@ -14,6 +14,8 @@ public class Room
 
     public Hotel Hotel { get; private set; }
 
+    public ICollection<Booking> Bookings { get; private set; }
+            = new List<Booking>();
     private Room()
     {
     }

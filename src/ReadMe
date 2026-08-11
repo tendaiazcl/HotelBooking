@@ -1,0 +1,67 @@
+1. Exception middleware       ← WE ARE HERE
+2. Logging
+3. Request/Correlation ID
+4. Validation
+5. Authentication
+6. Authorization
+7. API documentation / Swagger
+8. Integration testing
+9. Then package the application
+10. Docker
+11. CI/CD
+12. Azure
+13. Kubernetes
+14. Microservices where they actually make sense
+
+
+
+
+
+CURRENT BACKEND
+      │
+      ▼
+1. Exception Middleware       ← CURRENTLY HERE
+      │
+      ▼
+2. Logging
+      │
+      ▼
+3. Request / Correlation ID
+      │
+      ▼
+4. Validation
+      │
+      ▼
+5. Authentication
+      │
+      ▼
+6. Authorization
+      │
+      ▼
+7. Swagger / API Documentation
+      │
+      ▼
+8. Integration Testing
+      │
+      ▼
+══════════════════════════════
+      BLazor FRONTEND
+══════════════════════════════
+      │
+      ▼
+Connect Blazor → API
+      │
+      ▼
+Hotel browsing
+      │
+      ▼
+Room availability
+      │
+      ▼
+Booking
+      │
+      ▼
+Customer bookings
+      │
+      ▼
+Admin functionality

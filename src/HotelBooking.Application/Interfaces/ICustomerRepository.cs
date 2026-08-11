@@ -2,9 +2,9 @@ using HotelBooking.Domain.Entities;
 
 namespace HotelBooking.Application.Interfaces;
 
-public interface IHotelRepository
+public interface ICustomerRepository
 {
-    Task AddAsync(Hotel hotel);
-    Task<Hotel?> GetByIdAsync(int id);
-    Task<List<Hotel>> GetAllAsync();
+    Task AddAsync(Customer customer);
+
+    Task<Customer?> GetByIdAsync(int id);
 }
