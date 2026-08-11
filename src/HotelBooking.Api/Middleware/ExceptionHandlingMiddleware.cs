@@ -5,21 +5,39 @@ namespace HotelBooking.Api.Middleware;
 public class ExceptionHandlingMiddleware
 {
     private readonly RequestDelegate _next;
+    private readonly ILogger<ExceptionHandlingMiddleware> _logger;
 
-    public ExceptionHandlingMiddleware(RequestDelegate next)
+    public ExceptionHandlingMiddleware(
+        RequestDelegate next,
+        ILogger<ExceptionHandlingMiddleware> logger)
     {
         _next = next;
+        _logger = logger;
     }
 
     public async Task InvokeAsync(HttpContext context)
     {
+        var traceId = context.TraceIdentifier;
+
+        using var scope = _logger.BeginScope(
+            new Dictionary<string, object>
+            {
+                ["TraceId"] = traceId
+            });
+
         try
         {
             await _next(context);
         }
         catch (Exception exception)
         {
-            await HandleExceptionAsync(context, exception);
+            _logger.LogError(
+                exception,
+                "Unhandled exception occurred.");
+
+            await HandleExceptionAsync(
+                context,
+                exception);
         }
     }
 
@@ -29,6 +47,9 @@ public class ExceptionHandlingMiddleware
     {
         var statusCode = exception switch
         {
+            CustomerNotFoundException =>
+                StatusCodes.Status404NotFound,
+
             RoomNotFoundException =>
                 StatusCodes.Status404NotFound,
 
@@ -44,14 +65,19 @@ public class ExceptionHandlingMiddleware
             _ =>
                 StatusCodes.Status500InternalServerError
         };
+        var traceId = context.TraceIdentifier;
 
         context.Response.StatusCode = statusCode;
 
         await Results.Problem(
-            statusCode: statusCode,
-            title: GetTitle(statusCode),
-            detail: GetDetail(exception, statusCode))
-            .ExecuteAsync(context);
+        statusCode: statusCode,
+        title: GetTitle(statusCode),
+        detail: GetDetail(exception, statusCode),
+        extensions: new Dictionary<string, object?>
+        {
+            ["traceId"] = traceId
+        })
+        .ExecuteAsync(context);
     }
 
     private static string GetTitle(int statusCode)

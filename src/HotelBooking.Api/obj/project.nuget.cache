@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DVr5hykw8CU=",
+  "dgSpecHash": "brCPWLFP+M8=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Anesu\\OneDrive - Dynamic Visual Technologies PTY LTD\\desktop\\COPILOT\\src\\HotelBooking.Api\\HotelBooking.Api.csproj",
+  "projectFilePath": "C:\\Users\\Anesu\\copilot\\src\\HotelBooking.Api\\HotelBooking.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Anesu\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Anesu\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",
