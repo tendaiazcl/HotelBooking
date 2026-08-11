@@ -1,0 +1,15 @@
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\bin\Debug\net10.0\HotelBooking.Application.deps.json
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\bin\Debug\net10.0\HotelBooking.Application.dll
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\bin\Debug\net10.0\HotelBooking.Application.pdb
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\bin\Debug\net10.0\HotelBooking.Domain.dll
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\bin\Debug\net10.0\HotelBooking.Domain.pdb
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\obj\Debug\net10.0\HotelBooking.Application.csproj.AssemblyReference.cache
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\obj\Debug\net10.0\HotelBooking.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\obj\Debug\net10.0\HotelBooking.Application.AssemblyInfoInputs.cache
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\obj\Debug\net10.0\HotelBooking.Application.AssemblyInfo.cs
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\obj\Debug\net10.0\HotelBooking.Application.csproj.CoreCompileInputs.cache
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\obj\Debug\net10.0\HotelBoo.0ED144E9.Up2Date
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\obj\Debug\net10.0\HotelBooking.Application.dll
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\obj\Debug\net10.0\refint\HotelBooking.Application.dll
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\obj\Debug\net10.0\HotelBooking.Application.pdb
+C:\Users\Anesu\OneDrive - Dynamic Visual Technologies PTY LTD\desktop\COPILOT\src\HotelBooking.Application\obj\Debug\net10.0\ref\HotelBooking.Application.dll
